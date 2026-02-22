@@ -1,0 +1,337 @@
+﻿
+@model WalletReport.Models.SearchModel
+@{
+    ViewBag.Title = "Home Page";
+ }
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new Dictionary<String, Object>() { { "Id", "form1" }, { "name", "form1" } }))
+{
+        <div id="content" > <!-- Content start -->
+       
+        <div class="inner_content">
+          
+
+            <div class="widgets_area">
+                 <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well grey">
+                            <div class="well-header">
+                                <h5>Search Criteria</h5>
+                              @*  <ul>
+                                    <li class="color_pick"><a href="#"><i class="icon-th"></i></a>
+                                        <ul>
+                                            <li><a class="blue set_color" href="#"></a></li>
+                                            <li><a class="light_blue set_color" href="#"></a></li>
+                                            <li><a class="grey set_color" href="#"></a></li>
+                                            <li><a class="pink set_color" href="#"></a></li>
+                                            <li><a class="red set_color" href="#"></a></li>
+                                            <li><a class="orange set_color" href="#"></a></li>
+                                            <li><a class="yellow set_color" href="#"></a></li>
+                                            <li><a class="green set_color" href="#"></a></li>
+                                            <li><a class="dark_green set_color" href="#"></a></li>
+                                            <li><a class="turq set_color" href="#"></a></li>
+                                            <li><a class="dark_turq set_color" href="#"></a></li>
+                                            <li><a class="purple set_color" href="#"></a></li>
+                                            <li><a class="violet set_color" href="#"></a></li>
+                                            <li><a class="dark_blue set_color" href="#"></a></li>
+                                            <li><a class="dark_red set_color" href="#"></a></li>
+                                            <li><a class="brown set_color" href="#"></a></li>
+                                            <li><a class="black set_color" href="#"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>*@
+                            </div>
+
+                            <div class="well-content no-search">
+
+                                <table class="table table-bordered table-hover" style="width:100%;border-width:0">
+                                          <tr>
+                                              <td style="text-align:right">
+                                                   <label>Start&nbsp;Date</label>
+                                              </td>
+                                              <td style="text-align:left">
+                                                   <div class="input-append date" id="dp2" data-date="@ViewBag.Startdate" data-date-format="dd/mm/yyyy" align="left">
+                                                        <input id="StartDate"  name="StartDate" size="16" type="text" value="@ViewBag.Startdate" readonly="readonly">
+                                                      
+                                                        <span class="add-on"><i class="icon-calendar"></i></span>
+                                                    </div>
+                                              </td>
+                                              <td style="text-align:left">
+                                                   <label>End&nbsp;Date</label>
+                                              </td>
+                                              <td style="text-align:left">
+                                                    <div class="input-append date" id="dpYears" data-date="@ViewBag.EndDate" data-date-format="dd/mm/yyyy" data-date-viewmode="years">
+                                                        <input id="EndDate"  name="EndDate" size="16" type="text" value="@ViewBag.EndDate" readonly="readonly">
+                                                        <span class="add-on"><i class="icon-calendar"></i></span>
+                                                    </div>
+                                              </td>
+                                          </tr>
+                                    <tr>
+                                    </tr>
+                                            <tr>
+                                                <td style="text-align:right">
+                                                    <label>Bank</label>
+                                                </td>
+                                                 <td style="text-align:left">
+                                                       @Html.DropDownListFor(model => model.BankID,(SelectList)ViewBag.Banks)
+                                                </td>
+                                                 <td style="text-align:left">
+                                                    <label>Dealers</label>
+                                                </td>
+                                                 <td style="text-align:left">
+                                                     @Html.DropDownListFor(model => model.DealerID, (SelectList)ViewBag.Dealers)
+                                                </td>
+                                       </tr>
+                                       <tr>
+                                        <td style="text-align:right">
+                                              <label>Agent</label>
+                                        </td>
+                                         <td>
+                                              @Html.DropDownListFor(model => model.AgentID, (SelectList)ViewBag.Agents)
+                                        </td>
+                                         <td>
+                                             <label>Trans Type</label>
+                                        </td>
+                                         <td>
+                                             @Html.DropDownListFor(model => model.TransactionType, (SelectList)ViewBag.TransactionType)
+                                         </td>
+                                    </tr>
+                                     <tr>
+                                        <td style="text-align:right">
+                                              <label>Custom Criteria</label>
+                                        </td>
+                                         <td>
+                                              @Html.DropDownListFor(model => model.CustomSearch, (SelectList)ViewBag.AdditionalCriteria)
+                                        </td>
+                                         <td>
+                                               <label>Search Value</label>
+                                        </td>
+                                         <td>
+                                            @Html.TextBoxFor(model => model.CustomSearchValue)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                             &nbsp;
+                                        </td>
+                                         <td>
+                                             <input type="submit" class="btn dark_green submit-button" value="Search" onclick="return Search()" />
+                                        </td>
+                                         <td>
+                                              &nbsp;
+                                        </td>
+                                         <td>
+                                             &nbsp;
+                                        </td>
+                                    </tr>
+                                     </table>
+                            @*    <div class="form_row">
+                                    
+
+                                </div>
+                                <div class="form_row">
+                                    <label class="field_name">District</label>
+                                    <div class="field">
+                                        <div class="input-append date" id="dpMonths" data-date="102/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+                                            <input size="16" type="text" value="02/2012" readonly>
+                                            <span class="add-on"><i class="icon-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well grey">
+                            <div class="well-header">
+                                <h5>Transaction Report</h5>
+                            </div>
+
+                            <div class="well-content">
+                                 @if(ViewBag.Transaction != null && ((List<WalletReport.Models.WalletTransaction>)ViewBag.Transaction).Count() > 0)
+                                 {
+                                     @Html.HiddenFor(m=>m.CurrentPageIndex)
+                                     <div class="row-fluid">
+                                      <div class="pull-left span6">
+                                          @Html.DropDownListFor(m => m.PageSize, (SelectList)ViewBag.PageSizeSELECT)
+                                     </div>
+                                    <div class="pull-right sparkline">
+                                        <select id="DOWNLOADSELECT" name="DOWNLOADSELECT" class="chosen">
+                                            <option value="Download">Download</option>
+                                            <option value="EXL">Excels</option>
+                                        </select>
+                                         <input type="button" class="btn dark_green submit-button" value="DOWNLOAD" onclick="return downloadReport()" />
+                                     </div>
+                                   </div>
+                                    @*<br />*@
+                                 }
+                               
+                                <table class="table table-striped table-bordered table-hover datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>SN</th>
+                                             <th>Date</th>
+                                            <th>Terminal</th>
+                                            <th>Customer Ref</th>
+                                             <th>Reference</th>
+                                            <th>Description</th>
+                                            @*<th>Debit Amt</th>*@
+                                            <th>Transaction Amt</th>
+                                            <th>TranType</th>
+                                            <th>Dealer Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.Transaction != null && ((List<WalletReport.Models.WalletTransaction>)ViewBag.Transaction).Count() > 0)
+                                        {
+                                            int count = 0;
+                                            foreach (WalletReport.Models.WalletTransaction tran in ((List<WalletReport.Models.WalletTransaction>)ViewBag.Transaction))
+                                            {
+                                                ++count;
+                                                <tr>
+                                                    <td>@count</td>
+                                                    <td>@tran.TransactionDateBuild</td>
+                                                    <td>@tran.TerminalID</td>
+                                                    <td>@tran.CustomerRef</td>
+                                                    <td><a href="@Url.Action("Detail","Home", new { id=tran.TranID})">@tran.Reference</a></td>
+
+                                                    <td>@tran.Description</td>
+                                                   @* <td>@tran.DebitAmount</td>*@
+                                                    @if(tran.LastTransactionAmt > 0)
+                                                    {
+                                                        <td>@tran.LastTransactionAmt</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td><span style="color:red">@tran.LastTransactionAmt</span></td>
+                                                    }
+                                                    <td>@tran.TransactionType</td>
+                                                    <td>@tran.DealerName</td>
+
+                                                </tr>
+                                            }
+                                          <tr>
+                                              <td colspan="3" style="text-align:right">Total Record Count</td>
+                                              <td style="text-align:left">@Model.ItemCount</td>
+                                              <td></td>
+                                              <td style="text-align:left" colspan="3">TOTAL DEBIT:<span style="color:red"> @Model.TotalDebit.ToString("N2")</span> &nbsp;&nbsp;TOTAL CREDIT: <span> @Model.TotalCredit.ToString("N2")</span></td>
+
+                                              <td></td>
+                                          </tr>
+                                            
+                                        }
+                                        else
+                                        {
+                                               <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                @if ((bool)ViewBag.IsPagination)
+                                {
+                                     <div id="DataPager" class="row-fluid">
+                                          <div id="DataPagerRight" class="pull-right">
+                                              <div class="pagination">
+                                                  @Html.Pager(Model.PageSize, Model.CurrentPageIndex, Model.ItemCount)
+                                              </div>
+                                              
+                                         </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    
+@Scripts.Render("~/Scripts/library/footable/footable.js")
+@Scripts.Render("~/Scripts/library/footable/data-generator.js")
+@Scripts.Render("~/Scripts/library/bootstrapSwitch.js")
+@Scripts.Render("~/Scripts/library/bootstrap-modal.js")
+@Scripts.Render("~/Scripts/library/bootstrap-modalmanager.js")
+@Scripts.Render("~/Scripts/library/editor/wysihtml5-0.3.0.js")
+@Scripts.Render("~/Scripts/library/editor/bootstrap-wysihtml5.js")
+@Scripts.Render("~/Scripts/forms_advanced.js")
+
+
+    <script type="text/javascript">
+
+       
+
+        jQuery(document).ready(function () {
+
+            jQuery('#DataPagerRight a').click(function () {
+                
+                var pageIndex = jQuery(this).attr("data-PageIndex");
+
+                jQuery("#CurrentPageIndex").val(pageIndex);
+
+              
+
+                var form = jQuery("form#form1");
+                form.attr("action", "@Url.Action("TransReport","Report")");
+                form.submit();
+
+                return true;
+
+            });
+
+            jQuery("#PageSize").change(function () {
+                var form = jQuery("form#form1");
+                form.attr("action", "@Url.Action("TransReport","Report")");
+                try {
+                    jQuery("#CurrentPageIndex").val("0");
+                }
+                catch (e) {
+                }
+                form.submit();
+
+                return true;
+            });
+        });
+        function Search() {
+            //document.forms[0].action = "/WalletReport/Report/TransReport";
+          
+            //document.forms[0].submit();
+            jQuery("#CurrentPageIndex").val("0");
+            var form = jQuery("form#form1");
+            form.attr("action", "@Url.Action("TransReport","Report")");
+            form.submit();
+           
+            return true;
+        }
+        function downloadReport() {
+            var downLoadType = jQuery("#DOWNLOADSELECT").val();
+            if (downLoadType == "Download") {
+                alert("Please select the type you want to download");
+            }
+            if (downLoadType == "EXL") {
+
+                var form = jQuery("form#form1");
+                form.attr("action", "@Url.Action("DownloadExcel","Report")");
+                form.submit();
+            }
+        }
+        
+    </script>
+	
+	
+}

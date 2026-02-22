@@ -1,0 +1,202 @@
+﻿@model WalletReport.Models.Terminal
+
+@{
+    ViewBag.Title = "Create Terminal";
+}
+
+@using(Html.BeginForm(null,null, FormMethod.Post))
+{
+     @Html.AntiForgeryToken()
+  <div id="content"> <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+              <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+              <li class="active"><a href="#">Terminal Creation</a></li>
+            </ul>
+        </div>
+
+        <div class="inner_content">
+            @Html.HiddenFor(m => m.Id)
+            <div class="widgets_area">
+
+					 <div class="row-fluid">
+                            <div class="span12">
+                                <div class="well black">
+                                    <div class="well-header">
+                                        <h5>Terminal Creation</h5>
+                                    </div>
+                                    <div class="well-content no_padding no-search">
+                                        @Html.HiddenFor(c => c.Id)
+                                            <div id="rootwizard4">
+                                                <div class="wizard_navigation">
+                                                    <ul>
+                                                        <li><a href="#tab11" data-toggle="tab">
+                                                            <span>
+                                                                <i class="icon-user"></i>
+                                                                <strong>1</strong>
+                                                            </span> Terminal information</a></li>
+                                                        <li><a href="#tab12" data-toggle="tab">
+                                                            <span>
+                                                                <i class="icon-grid"></i>
+                                                                <strong>4</strong>
+                                                            </span> Confirmation</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="wizard_bar">
+                                                    <div class="progress progress-danger progress-striped">
+                                                      <div class="bar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane no_padding" id="tab11">
+                                                        @if(((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).IsManager  )
+                                                        {
+                                                            <div class="form_row">
+                                                                <label class="field_name align_right">Terminal Owner</label>
+                                                                <div class="field">
+                                                                    <div class="span4">
+                                                                        @Html.DropDownListFor(model => model.DealerID,(SelectList)ViewBag.Dealers )
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.Hidden("DealerID",((WalletReport.Models.User)Session["CurrentUser"]).DealerID)
+                                                        }
+                                                         
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal ID</label>
+                                                            <div class="field">
+                                                                @Html.TextBoxFor(c => c.TerminalID, new Dictionary<String, Object>() {{"class","span6 required"},{"ng-model","TerminalID"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal Description</label>
+                                                            <div class="field">
+                                                                 @Html.TextBoxFor(c => c.TerminalDesc, new Dictionary<String, Object>() {{"class","span6 required"},{"ng-model","TerminalID"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal Location </label>
+                                                            <div class="field">
+                                                               @Html.TextBoxFor(c => c.Location, new Dictionary<String, Object>() {{"class","span6 required"},{"ng-model","Location"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Minimum PSAM Value </label>
+                                                            <div class="field">
+                                                               @Html.TextBoxFor(c => c.MinimumPsamValue, new Dictionary<String, Object>() {{"class","span6 required"},{"ng-model","MinimumPsamValue"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Notify PSAM Below Minimum </label>
+                                                            <div class="field">
+                                                               @Html.CheckBoxFor(c => c.NotifyPsamExceeded)
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                             <label class="field_name align_right">Terminal Owner/Agent</label>
+                                                             <div class="field">
+                                                               <div class="span4">
+                                                                     @Html.DropDownListFor(model => model.AgentId,(SelectList)ViewBag.Agents)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane no_padding" id="tab12">
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">TerminalID</label>
+                                                            <div class="field">
+                                                                <span id="spTerminalID" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal Description</label>
+                                                            <div class="field">
+                                                                <span id="spTerminalDesc" class="help-inline" ></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Location</label>
+                                                            <div class="field">
+                                                                <span id="spLocation" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                         <div class="form_row">
+                                                            <label class="field_name align_right">Minimum PSAM Value</label>
+                                                            <div class="field">
+                                                                <span id="spMinimumPsamValue" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                   
+                                                    <div class="form_row wizard_buttons">
+                                                        <div class="field">
+                                                             <a href="@Url.Content("~/Terminal/TerminalList")" class="btn">Cancel</a>
+                                                            <span class="btn red previous-button">Previous</span>
+                                                            <span id="nextClick" class="btn light_blue next-button">Next</span>
+                                                            <input type="submit" class="btn dark_green submit-button" value="Save" />
+                                                           @* <span class="btn dark_green submit-button">Submit</span>*@
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                     </div>
+                     
+                    
+					
+             </div>
+         </div>
+    </div>
+}
+       
+@section scripts
+{
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            
+            jQuery("#nextClick").click(function () {
+
+                jQuery("#spTerminalID").text(jQuery("#TerminalID").val());
+                jQuery("#spTerminalDesc").text(jQuery("#TerminalDesc").val());
+                jQuery("#spLocation").text(jQuery("#Location").val());
+                jQuery("#spMinimumPsamValue").text(jQuery("#MinimumPsamValue").val());
+               
+            });
+
+        });
+    </script>
+   
+@Scripts.Render("~/Scripts/library/jquery.bootstrap.wizard.js")
+@Scripts.Render("~/Scripts/library/jquery.validate.js")
+@Scripts.Render("~/Scripts/flatpoint_core.js")
+@Scripts.Render("~/Scripts/forms_layout.js")
+@Scripts.Render("~/Scripts/forms_wizard.js")
+
+    @*<script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#DealerID").change(function (evt) {
+                alert("changed");
+                jQuery.ajax({
+                    url: "/Terminal/GetAgent",
+                    type: "POST",
+                    data: { DealerID: jQuery("#DealerID").val() },
+                    success: function (data) {
+                        alert(data.length);
+                        jQuery("#AgentId").empty();
+                        for (var i = 0; i < data.length; i++) {
+                            $("#AgentId").append("<option " + "value='" + data[i].AgentID + "'>" + data[i].DisplayName + "</option>");
+                        }
+                    },
+                    error: function (xhr) { alert("Something seems Wrong"); }
+                });
+            });
+        });
+    </script>*@
+
+}

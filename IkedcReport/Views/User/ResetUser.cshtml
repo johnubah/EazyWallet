@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+<div id="content"> <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+              <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+              <li class="active"><a href="#">Error</a></li>
+            </ul>
+        </div>
+
+        <div class="inner_content">
+            <div class="statistic clearfix">
+                <div class="current_page float_left">
+                    <span><i class="icon-reorder"></i> Error 500</span>
+                </div>
+
+             @*   <div class="charts clearfix">
+                    <div class="statistic_chart pull-right">
+                        <div id="sparkline" class="pull-left sparkline"></div> 
+                        <div class="bars_label first_label pull-left">
+                            <span class="value">CPU</span>
+                        </div>
+
+                        <div id="sparkline2" class="pull-left sparkline"></div> 
+                        <div class="bars_label pull-left">
+                            <span class="value">RAM</span>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+
+            <div class="user_bar">
+                <div class="row-fluid">
+                    <div class="span6 no-search">
+                       @* <select class="chosen">
+                            <option>Show all results</option>
+                            <option>Show results</option>
+                            <option>Show another results</option>
+                            <option>Only mine</option>
+                            <option>Display none</option>
+                        </select>*@
+                    </div>
+
+                    @*<div class="span6">
+                        <div class="search">
+                            <input type="text" data-provide="typeahead" name="search" class="typehead span8" placeholder="Search for something" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+                            <button type="submit" class="square-button color-green"><i class="icon-plus"></i></button>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="widgets_area">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="error_page">
+                            <div class="error_number">
+                            </div>
+                            <div class="error_description">
+                                <h3>PASSWORD RESET</h3>
+                                <p><br><br>
+                                    @ViewBag.message
+                                 </p>
+                            </div>
+                            <div class="clearfix"></div>
+                             <div class="buttons">
+                                <a href="@Url.Content("~/User/UserList")" class="btn blue">User List</a>
+                                @*<a href="#" class="btn red">Contact support</a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,143 @@
+﻿@model WalletReport.Models.ClientIP
+@{
+    ViewBag.Title = "Client IP Information";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div id="content">
+        <div class="top_bar">
+            <ul class="breadcrumb">
+                <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+                <li class="active"><a href="#">Client Creation</a></li>
+            </ul>
+        </div>
+        <div class="inner_content">
+
+            <div class="widgets_area">
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well black">
+                            <div class="well-header">
+                                <h5>Client IP Setup</h5>
+                            </div>
+                            <div class="well-content no_padding no-search">
+
+                                <div id="rootwizard4">
+                                    <div class="wizard_navigation">
+                                        <ul>
+                                            <li>
+                                                <a href="#tab11" data-toggle="tab">
+                                                    <span>
+                                                        <i class="icon-user"></i>
+                                                        <strong>1</strong>
+                                                    </span> Client information
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wizard_bar">
+                                        <div class="progress progress-danger progress-striped">
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane no_padding" id="tab11">
+                                            <div class="form_row">
+                                                <label class="field_name align_right">IP Address</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.Address, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Description</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.Description, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Transaction Type</label>
+                                                <div class="field">
+                                                    @Html.DropDownListFor(c => c.Trantype, (SelectList)ViewBag.ListOfTransactionType, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            @Html.HiddenFor(c=>c.Id)
+                                        </div>
+                                       
+                                    </div>
+                                   
+                                </div>
+                                <div class="form_row ">
+                                    <div class="field">
+                                        <a href="@Url.Content("~/Client/Index")" class="btn">Cancel</a>
+                                        <input type="submit" class="btn dark_green submit-button" value="Save" />
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#nextClick").click(function () {
+
+                jQuery("#spDealerName").text(jQuery("#DealerID").text());
+                jQuery("#spTerminalID").text(jQuery("#TerminalID").val());
+                jQuery("#spDailyLimit").text(jQuery("#DebitLimit").val());
+                var selectedValue = jQuery("#AgentID").val();
+                if (selectedValue == "0")
+                {
+                    jQuery("#spAgent").text("");
+                }
+                else
+                {
+                    jQuery("#spAgent").text(jQuery("#AgentID").text());
+                }
+
+
+
+
+            });
+
+            jQuery("#DealerID").change(function () {
+                var dID = jQuery(this).val();
+                alert(dID);
+                jQuery.getJSON("../Agent/LoadAgentByDealer", { Id: dID },
+                    function (data) {
+                        var AgentSelect = jQuery("#AgentID");
+                        AgentSelect.empty();
+                        AgentSelect.append(jQuery('<option>', {
+                            value: 0,
+                            text: "select an item"
+                        }));
+                        jQuery.each(data, function (index, itemData) {
+                            AgentSelect.append(jQuery('<option>', {
+                                value: itemData.Id,
+                                text: itemData.AgenName
+                            }));
+                        });
+
+                    });
+
+            });
+
+
+        });
+    </script>
+    @Scripts.Render("~/Scripts/library/jquery.bootstrap.wizard.js")
+    @Scripts.Render("~/Scripts/library/jquery.validate.js")
+    @Scripts.Render("~/Scripts/flatpoint_core.js")
+    @Scripts.Render("~/Scripts/forms_layout.js")
+    @Scripts.Render("~/Scripts/forms_wizard.js")
+}

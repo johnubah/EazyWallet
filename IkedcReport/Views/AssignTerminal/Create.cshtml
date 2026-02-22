@@ -1,0 +1,200 @@
+﻿@model WalletReport.Models.TerminalAssignment
+
+@{
+    ViewBag.Title = "Dealer Creation";
+    String OldTerminalID = String.Empty;
+    if(ViewBag.OldTerminalID != null)
+    {
+        OldTerminalID = ViewBag.OldTerminalID;
+    }
+}
+
+@using(Html.BeginForm(null,null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+  <div id="content"> <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+              <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+              <li class="active"><a href="#">Agent Creation</a></li>
+            </ul>
+        </div>
+      @Html.Hidden("OldTerminalID",OldTerminalID)
+        <div class="inner_content">
+             
+            <div class="widgets_area">
+
+					 <div class="row-fluid">
+                            <div class="span12">
+                                <div class="well black">
+                                    <div class="well-header">
+                                        <h5>Terminal Cash Assignment</h5>
+                                    </div>
+                                    <div class="well-content no_padding no-search">
+                                        
+                                            <div id="rootwizard4">
+                                                <div class="wizard_navigation">
+                                                    <ul>
+                                                        <li><a href="#tab11" data-toggle="tab">
+                                                            <span>
+                                                                <i class="icon-user"></i>
+                                                                <strong>1</strong>
+                                                            </span> Terminal information</a>
+                                                        </li>
+                                                        <li><a href="#tab13" data-toggle="tab">
+                                                            <span>
+                                                                <i class="icon-grid"></i>
+                                                                <strong>2</strong>
+                                                            </span> Finalize</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="wizard_bar">
+                                                    <div class="progress progress-danger progress-striped">
+                                                      <div class="bar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane no_padding" id="tab11">
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Dealer Information</label>
+                                                            <div class="field">
+                                                                @Html.DropDownListFor(c => c.DealerID, (SelectList)ViewBag.Dealers, new Dictionary<String, Object>() {{"class","span6 required"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal ID</label>
+                                                            <div class="field">
+                                                                @Html.TextBoxFor(c => c.TerminalID, new Dictionary<String, Object>() {{"class","span6 required"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Debit Limit</label>
+                                                            <div class="field">
+                                                                 @Html.TextBoxFor(c => c.DebitLimit, new Dictionary<String, Object>() {{"class","span6 required"} })
+                                                            </div>
+                                                        </div>
+                                                         <div class="form_row">
+                                                            <label class="field_name align_right">Agent Information</label>
+                                                            <div class="field">
+                                                                 @Html.DropDownListFor(c => c.AgentID, (SelectList)ViewBag.AgentListView, new Dictionary<String, Object>() {{"class","span6 required"} })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Post Without Limit Check</label>
+                                                            <div class="field">
+                                                               @Html.CheckBoxFor(c => c.IgnoreLimit)
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Is Active</label>
+                                                            <div class="field">
+                                                                @Html.CheckBoxFor(c => c.IsActive)
+                                                               @* <input class="span6" id="city" name="city" type="text">*@
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="tab-pane no_padding" id="tab13">
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">DealerName</label>
+                                                            <div class="field">
+                                                                <span  id="spDealerName" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Terminal ID</label>
+                                                            <div class="field">
+                                                                <span id="spTerminalID" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form_row">
+                                                            <label class="field_name align_right">Limit</label>
+                                                            <div class="field">
+                                                                <span id="spDailyLimit" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                         <div class="form_row">
+                                                            <label class="field_name align_right">Agent</label>
+                                                            <div class="field">
+                                                                <span id="spAgent" class="help-inline"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form_row wizard_buttons">
+                                                        <div class="field">
+                                                             <a href="@Url.Content("~/Agent/Index")" class="btn">Cancel</a>
+                                                            <span class="btn red previous-button">Previous</span>
+                                                            <span id="nextClick" class="btn light_blue next-button">Next</span>
+                                                            <input type="submit" class="btn dark_green submit-button" value="Save" />
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                     </div>
+             </div>
+         </div>
+    </div>
+}
+       
+@section scripts
+{
+      <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#nextClick").click(function () {
+
+                var dealerSelect = jQuery("#DealerID option:selected").text();
+               
+                jQuery("#spDealerName").html(dealerSelect);
+                jQuery("#spTerminalID").text(jQuery("#TerminalID").val());
+                jQuery("#spDailyLimit").text(jQuery("#DebitLimit").val());
+                var selectedValue = jQuery("#AgentID").val();
+                if (selectedValue == "0")
+                {
+                    jQuery("#spAgent").text("");
+                }
+                else
+                {
+
+                    jQuery("#spAgent").text(jQuery("#AgentID option:selected").text());
+                }
+
+               
+
+
+            });
+
+            jQuery("#DealerID").change(function () {
+                var dID = jQuery(this).val();
+                jQuery.getJSON("../Agent/LoadAgentByDealer", { Id: dID },
+                    function (data) {
+                        var AgentSelect = jQuery("#AgentID");
+                        AgentSelect.empty();
+                        AgentSelect.append(jQuery('<option>', {
+                            value: 0,
+                            text: "select an item"
+                        }));
+                        jQuery.each(data, function (index, itemData) {
+                            AgentSelect.append(jQuery('<option>', {
+                                value: itemData.Id,
+                                text: itemData.AgenName
+                            }));
+                        });
+
+                    });
+               
+            });
+
+
+        });
+    </script>
+   @Scripts.Render("~/Scripts/library/jquery.bootstrap.wizard.js")
+@Scripts.Render("~/Scripts/library/jquery.validate.js")
+@Scripts.Render("~/Scripts/flatpoint_core.js")
+@Scripts.Render("~/Scripts/forms_layout.js")
+@Scripts.Render("~/Scripts/forms_wizard.js")
+}

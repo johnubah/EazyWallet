@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\WalletReport</_PublishTargetUrl>
+    <History>True|2022-09-30T07:27:08.5585864Z;True|2022-09-30T08:14:02.9784171+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AgentBalanceScript.txt">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="bin/dotless.Core.dll">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>12/21/2021 13:57:15</publishTime>
+    </File>
+    <File Include="bin/GridMvc.dll">
+      <publishTime>12/21/2021 13:57:15</publishTime>
+    </File>
+    <File Include="bin/IkedcReport.dll">
+      <publishTime>02/18/2015 23:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/21/2021 13:57:17</publishTime>
+    </File>
+    <File Include="bin/Mono.Math.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/MvcPaging.dll">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>12/21/2021 13:53:39</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.dll">
+      <publishTime>12/21/2021 13:53:39</publishTime>
+    </File>
+    <File Include="bin/MySql.Web.dll">
+      <publishTime>12/21/2021 13:53:39</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/21/2021 13:57:17</publishTime>
+    </File>
+    <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
+      <publishTime>12/21/2021 13:57:14</publishTime>
+    </File>
+    <File Include="bin/StringHelper.dll">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>12/21/2021 13:57:17</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>12/21/2021 13:57:17</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.Less.dll">
+      <publishTime>12/21/2021 13:57:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.Less.pdb">
+      <publishTime>12/21/2021 13:57:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/21/2021 13:57:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/21/2021 13:57:17</publishTime>
+    </File>
+    <File Include="bin/WalletReport.dll">
+      <publishTime>09/30/2022 08:27:07</publishTime>
+    </File>
+    <File Include="bin/WalletReport.pdb">
+      <publishTime>09/30/2022 08:27:07</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/21/2021 13:57:18</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>12/21/2021 13:53:40</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>12/21/2021 13:53:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/Gridmvc.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/font-awesome-ie7.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/font-awesome-ie7.min.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/font-awesome.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/font-awesome.min.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/fontawesome-webfont.eot">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/fontawesome-webfont.svg">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/fontawesome-webfont.ttf">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/fontawesome-webfont.woff">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/icon/FontAwesome.otf">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-fileupload.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-fileupload.min.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-modal.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-select.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-select.min.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-timepicker.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-timepicker.min.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrap-wysihtml5.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/bootstrapSwitch.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/chosen.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/datepicker.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/datetimepicker.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/footable/footable-0.1.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/footable/footable.paginate.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/footable/footable.sortable-0.1.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/fullcalendar.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jquery-ui-1.10.3.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jquery.dataTables.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jquery.fileupload-ui.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jquery.mCustomScrollbar.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jquery.minicolors.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/library/jqvmap.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/PagedList.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/stylesheet.css">
+      <publishTime>12/21/2021 13:57:03</publishTime>
+    </File>
+    <File Include="Content/themes/base/accordion.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/all.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/autocomplete.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/base.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/button.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/core.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/datepicker.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/dialog.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/draggable.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>12/21/2021 13:57:04</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/menu.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/progressbar.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/resizable.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectable.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectmenu.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/slider.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/sortable.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/spinner.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/tabs.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/theme.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Content/themes/base/tooltip.css">
+      <publishTime>12/21/2021 13:57:05</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Grid.mvc.readme">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/double_divider.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/favicon.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/forms/chosen-arrow.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/forms/uniform_check.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/forms/uniform_radio.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/forms/uniform_select.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/glyphicons-halflings-white.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/glyphicons-halflings.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/header_images/bg.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/images_zoom.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/jquery.minicolors.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/logo.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/minus.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>12/21/2021 13:57:06</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/plus.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/progress-pattern.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="Images/video_play.png">
+      <publishTime>12/21/2021 13:57:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/calendar.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/charts.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/dashboard.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/datatables.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/flatpoint_core.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/forms.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/forms_advanced.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/forms_layout.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/forms_wizard.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.lang.ru.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.1.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.1.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.1.min.map">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.3.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.11.2.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.11.2.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>12/21/2021 13:57:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.debug.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-datepicker.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-datetimepicker.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-datetimepicker.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-fileupload.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-fileupload.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-inputmask.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-modal.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-modalmanager.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-select.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-select.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-timepicker.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrap-timepicker.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/bootstrapSwitch.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/calendar.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/charCount.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/charts.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/chosen.jquery.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/chosen.jquery.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/dashboard.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/datatables.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/editor/bootstrap-wysihtml5.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/editor/wysihtml5-0.3.0.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/editor/wysihtml5-0.3.0.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/app.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/cors/jquery.postmessage-transport.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/cors/jquery.xdr-transport.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-angular.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-audio.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-image.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-process.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-ui.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-validate.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload-video.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.fileupload.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/jquery.iframe-transport.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/main.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/file_upload/vendor/jquery.ui.widget.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/flatpoint_core.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/excanvas.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/excanvas.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.colorhelpers.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.colorhelpers.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.canvas.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.canvas.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.categories.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.categories.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.crosshair.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.crosshair.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.errorbars.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.errorbars.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.fillbetween.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.fillbetween.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.image.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.image.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.navigate.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.navigate.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.orderBars.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.pie.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.pie.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.resize.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.resize.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.selection.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.selection.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.stack.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.stack.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.symbol.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.symbol.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.threshold.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.threshold.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.time.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/flot/jquery.flot.time.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/data-generator.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/footable.filter.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/footable.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/footable.paginate.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/footable.plugin.template.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/footable/footable.sortable.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/forms.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/forms_advanced.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/forms_layout.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/forms_wizard.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/fullcalendar.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/fullcalendar.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/google-code-prettify/prettify.css">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/google-code-prettify/prettify.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/html5shiv.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.autosize-min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.autosize.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.backstretch.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.bootstrap.wizard.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.bootstrap.wizard.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.collapsible.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.collapsible.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.dataTables.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.dataTables.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.dataTables.paginate.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.easytabs.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.easytabs.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.inputmask.bundle.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.inputmask.bundle.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.mCustomScrollbar.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.minicolors.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.mousewheel.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.sparkline.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.tagsinput.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.tagsinput.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.uniform.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.uniform.min.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/jquery.validate.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/data/jquery.vmap.sampledata.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/jquery.vmap.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/jquery.vmap.min.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/jquery.vmap.packed.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.africa.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.asia.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.australia.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.europe.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.north-america.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/jquery.vmap.south-america.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/continents/readme.txt">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.europe.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.france.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.germany.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.russia.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.usa.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/maps/maps/jquery.vmap.world.js">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Scripts/library/timeline.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/library/updating.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/timeline.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/updating.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>12/21/2021 13:57:11</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Account/Index.cshtml">
+      <publishTime>12/25/2014 10:05:30</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Agent/Create.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Agent/Index.cshtml">
+      <publishTime>09/19/2022 19:56:32</publishTime>
+    </File>
+    <File Include="Views/AssignTerminal/Create.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/AssignTerminal/Index.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/AssignTerminal/ManagePIN.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Bank/Create.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Bank/Index.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Client/Create.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Client/Index.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/Dealers/Create.cshtml">
+      <publishTime>09/30/2022 08:13:03</publishTime>
+    </File>
+    <File Include="Views/Dealers/DealerList.cshtml">
+      <publishTime>09/19/2022 19:55:17</publishTime>
+    </File>
+    <File Include="Views/Dealers/Transfer.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/District/Create.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/District/DistrictList.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Home/Detail.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Home/Error.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Report/TransactionDetail.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Report/TransReport.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Grid.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_GridPager.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginLayout.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Terminal/Create.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Terminal/TerminalList.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/User/Create.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/User/ResetUser.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/User/UserList.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/Index.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/Load.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/LoadAgent.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/LoadSuccess.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/Reverse.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Wallet/Transaction.cshtml">
+      <publishTime>12/21/2021 13:57:13</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>12/21/2021 13:57:12</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/30/2022 08:14:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

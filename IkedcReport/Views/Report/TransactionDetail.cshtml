@@ -1,0 +1,153 @@
+﻿@model WalletReport.Models.WalletTransaction
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    <div id="content">
+        <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+                <li><a href="dashboard.html">
+                    <i class="icon-home"></i></a> <span class="divider">/</span></li>
+                <li class="active">
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="inner_content" ng-app="">
+
+            <div class="widgets_area">
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well black">
+                            <div class="well-header">
+                                <h5>Transaction Detail</h5>
+                            </div>
+
+                            <div class="well-content no_padding no-search">
+
+                                <div id="rootwizard4">
+                                    <div class="wizard_navigation">
+                                        <ul>
+                                            <li>
+                                                <a href="#tab11" data-toggle="tab">
+                                                    <span>
+                                                        <i class="icon-user"></i>
+                                                        <strong>1</strong>
+                                                    </span> Transaction Detail information
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wizard_bar">
+                                        <div class="progress progress-danger progress-striped">
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane no_padding" id="tab11">
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Date Of Transaction</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.TransactionDateBuild, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Reference</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.Reference, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Terminal ID</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.TerminalID, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Description</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.Description, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Amount</label>
+                                                <div class="field">
+
+                                                    @Html.TextBoxFor(c => c.LastTransactionAmt, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } });
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Transaction Type</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.TransactionTypeDescription, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } });
+                                                    @* <input class="span6" id="city" name="city" type="text">*@
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Customer Ref</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.CustomerRef, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } });
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Dealer Name</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(c => c.DealerName, new Dictionary<String, Object>() { { "class", "span6 required" }, { "readonly", "readonly" } });
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                </div>
+                                <div class="form_row wizard_buttons">
+                                    <div class="field">
+                                        <a href="@Url.Content("~/District/DistrictList")" class="btn">Cancel</a>
+                                        @if (ViewBag.CanReverse != null && (bool)ViewBag.CanReverse)
+                                        {
+                                            <input type="submit" class="btn dark_green submit-button" value="Reverse Transaction" />
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#nextClick").click(function () {
+
+                jQuery("#spContactMobile").text(jQuery("#ContactMobile").val());
+                jQuery("#spContactEmail").text(jQuery("#ContactEmail").val());
+                jQuery("#spContactAddress").text(jQuery("#ContactAddress").val());
+                jQuery("#spContactName").text(jQuery("#ContactName").val());
+                jQuery("#spState").text(jQuery("#State").val());
+
+                jQuery("#spCity").text(jQuery("#City").val());
+                jQuery("#spAddressLine2").text(jQuery("#AddressLine2").val());
+
+                jQuery("#spAddressLine1").text(jQuery("#AddressLine1").val());
+                jQuery("#spdistrict_name").text(jQuery("#district_name").val());
+                jQuery("#spCode").text(jQuery("#Code").val());
+
+            });
+
+        });
+    </script>
+    @Scripts.Render("~/Scripts/library/jquery.bootstrap.wizard.js")
+    @Scripts.Render("~/Scripts/library/jquery.validate.js")
+    @Scripts.Render("~/Scripts/flatpoint_core.js")
+    @Scripts.Render("~/Scripts/forms_layout.js")
+    @Scripts.Render("~/Scripts/forms_wizard.js")
+}

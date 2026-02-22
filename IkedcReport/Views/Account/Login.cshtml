@@ -1,0 +1,48 @@
+﻿@model WalletReport.Models.LoginModel
+
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+
+@using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+   
+     <div class="login-container">
+          @Html.ValidationSummary(true)
+        <div class="login-header blue">
+            <h4>Sign in</h4>
+        </div>
+        <form>
+            <div class="login-field">
+                <label for="username">Email Address</label>
+                @Html.EditorFor(c=>c.UserName,new { @placeholder = "Username" })
+               @* <input type="text" name="username" id="username" placeholder="Username">*@
+                <i class="icon-user"></i>
+            </div>
+            <div class="login-field">
+                <label for="password">Password</label>
+                @Html.PasswordFor(model=>model.Password,new { @placeholder = "Password" })
+                @*<input type="password" name="password" id="password" placeholder="Password">*@
+                <i class="icon-lock"></i>
+            </div>
+            <div class="login-button">
+                <button type="submit" class="btn btn-large btn-block blue">SIGN IN <i class="icon-arrow-right"></i></button>
+            </div>
+            <div class="forgot-password">
+               
+                @Html.ActionLink("Forgot password?", "ForgetPassword")
+            </div>
+        </form>
+    </div>
+}
+@section scripts
+{
+       <script>
+        jQuery(document).ready(function ($) {
+            $('.uniform').uniform();
+        });
+    </script>
+}

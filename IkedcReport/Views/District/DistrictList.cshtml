@@ -1,0 +1,127 @@
+﻿
+@model List<WalletReport.Models.District>
+@{
+    ViewBag.Title = "UserList";
+}
+
+ <div id="content"> <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+              <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+              <li class="active"><a href="@Url.Content("~/Home/Index")">Dashboard</a></li>
+            </ul>
+        </div>
+
+        <div class="inner_content">
+          @*  <div class="statistic clearfix">
+                <div class="current_page float_left">
+                    <span><i class="icon-reorder"></i> Datatables</span>
+                </div>
+
+                <div class="charts clearfix">
+                    <div class="statistic_chart pull-right">
+                        <div id="sparkline" class="pull-left sparkline"></div> 
+                        <div class="bars_label first_label pull-left">
+                            <span class="value">CPU</span>
+                        </div>
+
+                        <div id="sparkline2" class="pull-left sparkline"></div> 
+                        <div class="bars_label pull-left">
+                            <span class="value">RAM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            <div class="user_bar">
+                <div class="row-fluid">
+                    <div class="span6 no-search">
+                         <a href="@Url.Content("~/District/Create")" class="btn">Create</a>
+                       @* <select class="chosen">
+                            <option>Show all results</option>
+                            <option>Show results</option>
+                            <option>Show another results</option>
+                            <option>Only mine</option>
+                            <option>Display none</option>
+                        </select>*@
+                    </div>
+
+                 @*   <div class="span6">
+                        <div class="search">
+                            <input type="text" data-provide="typeahead" name="search" class="typehead span8" placeholder="Search for something" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+                            <button type="submit" class="square-button color-green"><i class="icon-plus"></i></button>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="widgets_area">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well grey">
+                            <div class="well-header">
+                                <h5>Dealers List</h5>
+                              @*  <ul>
+                                    <li class="color_pick"><a href="#"><i class="icon-th"></i></a>
+                                        <ul>
+                                            <li><a class="blue set_color" href="#"></a></li>
+                                            <li><a class="light_blue set_color" href="#"></a></li>
+                                            <li><a class="grey set_color" href="#"></a></li>
+                                            <li><a class="pink set_color" href="#"></a></li>
+                                            <li><a class="red set_color" href="#"></a></li>
+                                            <li><a class="orange set_color" href="#"></a></li>
+                                            <li><a class="yellow set_color" href="#"></a></li>
+                                            <li><a class="green set_color" href="#"></a></li>
+                                            <li><a class="dark_green set_color" href="#"></a></li>
+                                            <li><a class="turq set_color" href="#"></a></li>
+                                            <li><a class="dark_turq set_color" href="#"></a></li>
+                                            <li><a class="purple set_color" href="#"></a></li>
+                                            <li><a class="violet set_color" href="#"></a></li>
+                                            <li><a class="dark_blue set_color" href="#"></a></li>
+                                            <li><a class="dark_red set_color" href="#"></a></li>
+                                            <li><a class="brown set_color" href="#"></a></li>
+                                            <li><a class="black set_color" href="#"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>*@
+                            </div>
+
+                            <div class="well-content">
+                                <table class="table table-striped table-bordered table-hover datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Code</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(WalletReport.Models.District d in Model)
+                                        {
+                                        <tr>
+                                            <td>1</td>
+                                             <td>@d.Code</td>
+                                            <td>@d.district_name</td>
+                                            <td>@d.AddressLine1</td>
+                                            <td>@d.ContactEmail</td>
+                                            <td>@d.ContactMobile</td>
+
+                                            <td><a href="@Url.Content(String.Format("~/District/Create?Id={0}",d.Id))"> <span class="label label-success">Edit</span></a>
+                                            </td>
+                                        </tr>
+                                        }
+        
+                                   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

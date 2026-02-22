@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>WALLET REPORT</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="">
+
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/bootstrap-responsive.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/stylesheet.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/icon/font-awesome.css")" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+        <!-- Le fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@Url.Content("~/Images/apple-touch-icon-144-precomposed.png")" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@Url.Content("~/Images/apple-touch-icon-114-precomposed.png")" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@Url.Content("~/Images/apple-touch-icon-72-precomposed.png")" />
+        <link rel="apple-touch-icon-precomposed" href="@Url.Content("~/Images/apple-touch-icon-57-precomposed.png")" />
+        <link rel="shortcut icon" href="@Url.Content("~/Images/favicon.png")" />
+        @Scripts.Render("~/Scripts/jquery-1.10.2.js")
+        @Scripts.Render("~/Scripts/jquery-ui-1.10.3.js")
+        @Scripts.Render("~/Scripts/bootstrap.js")
+
+        @Scripts.Render("~/Scripts/library/jquery.collapsible.min.js")
+        @Scripts.Render("~/Scripts/library/jquery.mCustomScrollbar.min.js")
+        @Scripts.Render("~/Scripts/library/jquery.mousewheel.min.js")
+        @Scripts.Render("~/Scripts/library/jquery.uniform.min.js")
+
+        @Scripts.Render("~/Scripts/library/jquery.sparkline.min.js")
+        @Scripts.Render("~/Scripts/library/chosen.jquery.min.js")
+        @Scripts.Render("~/Scripts/library/jquery.easytabs.js")
+        @Scripts.Render("~/Scripts/library/flot/excanvas.min.js")
+        @Scripts.Render("~/Scripts/library/flot/jquery.flot.js")
+        @Scripts.Render("~/Scripts/library/flot/jquery.flot.pie.js")
+        @Scripts.Render("~/Scripts/library/flot/jquery.flot.selection.js")
+        @Scripts.Render("~/Scripts/library/flot/jquery.flot.resize.js")
+        @Scripts.Render("~/Scripts/library/flot/jquery.flot.orderBars.js")
+        @Scripts.Render("~/Scripts/library/maps/jquery.vmap.js")
+        @Scripts.Render("~/Scripts/library/maps/maps/jquery.vmap.world.js")
+        @Scripts.Render("~/Scripts/library/maps/data/jquery.vmap.sampledata.js")
+        @Scripts.Render("~/Scripts/library/jquery.autosize-min.js")
+        @Scripts.Render("~/Scripts/library/charCount.js")
+        @Scripts.Render("~/Scripts/library/jquery.minicolors.js")
+        @Scripts.Render("~/Scripts/library/jquery.tagsinput.js")
+        @Scripts.Render("~/Scripts/library/fullcalendar.min.js")
+
+
+        @Scripts.Render("~/Scripts/library/bootstrap-datetimepicker.js")
+        @Scripts.Render("~/Scripts/library/bootstrap-timepicker.js")
+        @Scripts.Render("~/Scripts/library/bootstrap-datepicker.js")
+        @Scripts.Render("~/Scripts/library/bootstrap-fileupload.js")
+        @Scripts.Render("~/Scripts/library/jquery.inputmask.bundle.js")
+
+        @Scripts.Render("~/Scripts/flatpoint_core.js")
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+ 
+    </head>
+    <body>
+    
+        }
+  <header class="dark_grey"> 
+        <a href="#" class="logo_image"><span class="hidden-480">WALLET&nbsp;REPORT</span></a>
+        <ul class="header_actions">
+            <li class="dropdown"><a href="#"><img src="@Url.Content("~/demo/avatar_06.png")" alt="User image" class="avatar"> Quick Link <i class="icon-angle-down"></i></a>
+                <ul>
+                    <li><a href="#"><i class="icon-cog"></i> Trans Report</a></li>
+                    <li><a href="@Url.Content("~/Account/ChangePassword")"><i class="icon-remove"></i> Change Password</a></li>
+                    <li><a href="@Url.Content("~/Account/SignOff")"><i class="icon-remove"></i> Logout</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="@Url.Content("~/Account/SignOff")"><i class="icon-signout"></i> <span class="hidden-768 hidden-480">Logout</span></a></li>
+            <li class="responsive_menu"><a class="iconic" href="#"><i class="icon-reorder"></i></a></li>
+        </ul>
+    </header>
+
+    <div id="main_navigation" class="dark_navigation"> <!-- Main navigation start -->
+        <div class="inner_navigation">
+            <ul class="main">
+                <li class="active navAct"><a id="current" href="@Url.Content("~/Home/Index")"><i class="icon-home"></i> Dashboard</a>
+                </li>
+                @*@if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).IsEtop)
+                {
+                      <li>
+                        <a href="@Url.Content("~/Bank/Index")"><i class="icon-tasks"></i>Manage Bank</a>
+                    </li> 
+                }*@
+               @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).isBank || ((WalletReport.Models.User)Session["CurrentUser"]).IsEtop)
+                {
+                     <li>
+                       <a href="@Url.Content("~/Dealers/DealerList")"><i class="icon-tasks"></i> Manage Dealers</a>
+                    </li>
+               }
+               else if (((WalletReport.Models.User)Session["CurrentUser"]).IsDealer)
+               {
+                <li>
+                    <a href="@Url.Content("~/Dealers/DealerList")"><i class="icon-tasks"></i> My Balance</a>
+                </li>
+                <li>
+                    <a href="@Url.Content("~/Dealers/Transfer")"><i class="icon-tasks"></i> Transfer</a>
+                </li>
+               }
+               
+                @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).IsDealer || ((WalletReport.Models.User)Session["CurrentUser"]).IsEtop || ((WalletReport.Models.User)Session["CurrentUser"]).isBank)
+                {
+                    <li>
+                        <a href="@Url.Content("~/Agent/Index")"><i class="icon-tasks"></i>Manage Agent</a>
+                    </li>
+                 }
+                @if ( ((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).isBank)
+                {
+                    <li>
+                        <a href="@Url.Content("~/Wallet/Index")"><i class="icon-reorder"></i>Load Dealer Wallet</a>
+                    </li>
+                }
+                @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).isBank)
+                {
+                    <li>
+                        <a href="@Url.Content("~/Wallet/LoadAgent")"><i class="icon-reorder"></i>Load Agent Wallet</a>
+                    </li>
+                }
+                @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin)
+                {
+                    <li>
+                        <a href="@Url.Content("~/Client/Index")"><i class="icon-reorder"></i>Manage IP Address</a>
+                    </li>
+                }
+                @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).IsEtop || ((WalletReport.Models.User)Session["CurrentUser"]).isBank)
+                {
+                     <li><a href="@Url.Content("~/User/UserList")"><i class="icon-reorder"></i>Manager User</a>
+                    </li>
+                }
+                @if (((WalletReport.Models.User)Session["CurrentUser"]).IsSuperUserOrAdmin || ((WalletReport.Models.User)Session["CurrentUser"]).isBank)
+                {
+                    <li>
+                        <a href="@Url.Content("~/AssignTerminal/Index")"><i class="icon-tasks"></i>Enable Terminal(for Cash)</a>
+                    </li>
+                }
+                else if (((WalletReport.Models.User)Session["CurrentUser"]).IsDealer && !String.IsNullOrWhiteSpace(((WalletReport.Models.User)Session["CurrentUser"]).AllowTerminalConfig) && ((WalletReport.Models.User)Session["CurrentUser"]).AllowTerminalConfig.ToUpper() == "Y")
+                {
+                    <li>
+                        <a href="@Url.Content("~/AssignTerminal/Index")"><i class="icon-tasks"></i>Enable Terminal(for Cash)</a>
+                    </li>
+                }
+                <li><a href="@Url.Content("~/Report/TransReport")"><i class="icon-tasks"></i>Transaction Report</a>
+                </li>
+            </ul>
+        </div>
+    </div>  
+
+       @RenderBody()
+   
+
+    <footer>
+        <span class="hidden-480">© @DateTime.Now.Year.ToString()</span>
+       @* <ul>
+            <li><a href="#">Purchase template</a></li>
+            <li><a href="#">Contact admin</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>*@
+    </footer>
+     
+        @RenderSection("scripts",false)
+
+           
+    </body>
+</html>

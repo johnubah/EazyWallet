@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Message";
+}
+
+<div id="content"> <!-- Content start -->
+
+        <div class="inner_content">
+            <div class="widgets_area">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="error_page">
+                             <div class="error_number">
+                            </div>
+                            <div class="error_description">
+                                   <span  style="color:red;font-size:large">@ViewBag.Message</span> 
+                            </div>
+                            <div class="clearfix"></div>
+                             <div class="buttons">
+                                <a href="@Url.Content("~/Home/Index")" class="btn blue">Go back to dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

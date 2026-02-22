@@ -1,0 +1,175 @@
+﻿@model WalletReport.Models.TransactionDetail
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div id="content">
+    <!-- Content start -->
+    <div class="top_bar">
+        <ul class="breadcrumb">
+            <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+            <li class="active"><a href="@Url.Content("~/Home/Index")">Dashboard</a></li>
+        </ul>
+    </div>
+
+    <div class="inner_content">
+        @*  <div class="statistic clearfix">
+                <div class="current_page float_left">
+                    <span><i class="icon-reorder"></i> Datatables</span>
+                </div>
+
+                <div class="charts clearfix">
+                    <div class="statistic_chart pull-right">
+                        <div id="sparkline" class="pull-left sparkline"></div>
+                        <div class="bars_label first_label pull-left">
+                            <span class="value">CPU</span>
+                        </div>
+
+                        <div id="sparkline2" class="pull-left sparkline"></div>
+                        <div class="bars_label pull-left">
+                            <span class="value">RAM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        <div class="user_bar">
+            <div class="row-fluid">
+            </div>
+        </div>
+        <div class="widgets_area">
+            <div class="row-fluid">
+                @Html.BeginForm("Reverse",null, FormMethod.Post)
+                {
+                <div class="span12">
+                    <div class="well grey">
+                        <div class="well-header">
+                            <h5>Transaction Detail</h5>
+                        </div>
+                        <div class="well-content">
+                            <table class="table table-striped table-bordered table-hover datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Terminal ID
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.TerminalID
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Dealer Name
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.DealerName
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Customer Ref
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.CustomerRef
+                                        </td>
+
+                                    </tr>
+                                    @*<tr>
+                                            <td>
+                                                Terminal ID
+                                            </td>
+                                            <td>
+                                                @Model.Transaction.TerminalID
+                                            </td>
+
+                                        </tr>*@
+                                    <tr>
+                                        <td>
+                                            Amount
+                                        </td>
+                                        <td>
+                                            @if (Model.Transaction.DebitAmount > 0)
+                                            {
+                                                <span style="color:red">@Model.Transaction.DebitAmount </span>
+                                            }
+                                            else
+                                            {
+                                                <span>@Model.Transaction.CreditAmount </span>
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transaction Type
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.TransactionType
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transaction Date
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.TransactionDateBuild
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Account
+                                        </td>
+                                        <td>
+                                            @Model.Transaction.SettlementAccount
+                                        </td>
+                                    </tr>
+                                    @if (!String.IsNullOrWhiteSpace(Model.RequestXml))
+                                    {
+                                        <tr>
+                                            <td colspan="2" style="text-align:center">&nbsp; </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align:center">Last Posting Notification Request-Response </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div>@Model.RequestXml</div>
+                                            </td>
+                                            <td>
+                                                <div>@Model.ResponseXml</div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                       <input type="hidden" id="tranID" name="tranID" value="@Model.Transaction.TranID" />
+                    </div>
+                    <div class="form_row pull-left">
+                        <div class="field">
+                            @if (ViewBag.CanReverse != null && (bool)ViewBag.CanReverse && !Model.Transaction.IsReversed)
+                            {
+                                <input type="submit" class="btn dark_green submit-button" value="Reverse Transaction" />
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

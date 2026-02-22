@@ -1,0 +1,366 @@
+﻿@model WalletReport.Models.User
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    <div id="content">
+        <!-- Content start -->
+        <div class="top_bar">
+            <ul class="breadcrumb">
+                <li><a href="dashboard.html"><i class="icon-home"></i></a><span class="divider">/</span></li>
+                <li class="active"><a href="@Url.Content("~/Home/Index")">Dashboard</a></li>
+            </ul>
+        </div>
+        @Html.HiddenFor(m =>m.Id)
+        <div class="inner_content">
+
+            <div class="widgets_area">
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="well black">
+                            <div class="well-header">
+                                <h5>User Creation</h5>
+                            </div>
+
+                            <div class="well-content no_padding no-search">
+
+                                <div id="rootwizard4">
+                                    <div class="wizard_navigation">
+                                        <ul>
+                                            <li><a href="#tab11" data-toggle="tab">
+                                                <span>
+                                                    <i class="icon-user"></i>
+                                                    <strong>1</strong>
+                                                </span>User information</a></li>
+                                            <li><a href="#tab12" data-toggle="tab">
+                                                <span>
+                                                    <i class="icon-lock"></i>
+                                                    <strong>2</strong>
+                                                </span>Account information</a></li>
+                                            <li><a href="#tab13" data-toggle="tab">
+                                                <span>
+                                                    <i class="icon-reorder"></i>
+                                                    <strong>3</strong>
+                                                </span>Contact Information</a></li>
+                                            <li><a href="#tab14" data-toggle="tab">
+                                                <span>
+                                                    <i class="icon-grid"></i>
+                                                    <strong>4</strong>
+                                                </span>Finalize</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="wizard_bar">
+                                        <div class="progress progress-danger progress-striped">
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane no_padding" id="tab11">
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Display Name</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.DisplayName, new Dictionary<String, Object>() { { "class", "span6 required" }, { "onblur", "populateText(this,'#spDisplayName')" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">First Name</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.Firstname, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Last Name</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.LastName, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Phone</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.Mobile, new Dictionary<String, Object>() { { "class", "span6 required" }})
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">City</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.City, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Country</label>
+                                                <div class="field">
+
+                                                    @Html.TextBoxFor(m => m.Country, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane no_padding" id="tab12">
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Email Address(Username)</label>
+                                                <div class="field">
+                                                    @Html.TextBoxFor(m => m.Username, new Dictionary<String, Object>() { { "class", "span6 required" } })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Password</label>
+                                                <div class="field">
+                                                    @Html.PasswordFor(m => m.Password, new { @class = "span6 required" })
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Confirm password</label>
+                                                <div class="field">
+                                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "span6 required" })
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane no_padding" id="tab13">
+
+
+                                            <div class="form_row">
+                                                <label class="field_name align_right">User Type</label>
+                                                <div class="span4 no-search">
+                                                    @Html.DropDownListFor(model => model.UserTypeID, (SelectList)ViewBag.UserType, new { onchange = "return ChangeType();" })
+                                                </div>
+                                            </div>
+                                            <div id="BankDiv" class="form_row">
+                                                <label class="field_name align_right">Manage Bank</label>
+                                                <div class="span4 no-search">
+                                                    @Html.DropDownListFor(model => model.BankID, (SelectList)ViewBag.Banks)
+                                                </div>
+                                            </div>
+                                            <div id="DealersDIV" class="form_row">
+                                                <label class="field_name align_right">Dealer</label>
+                                                <div class="span4 no-search">
+                                                    @Html.DropDownListFor(model => model.DealerID, (SelectList)ViewBag.Dealers)
+                                                </div>
+                                            </div>
+                                            <div id="TerminalConfigDIV" class="form_row">
+                                                <label class="field_name align_right">Allow Terminal Configuration</label>
+                                                <div class="span4 no-search">
+                                                    @Html.DropDownListFor(model => model.AllowTerminalConfig, (SelectList)ViewBag.allowTerminalViewModelBind)
+                                                </div>
+                                            </div>
+                                            <div id="AgentDIV" class="form_row">
+                                                <label class="field_name align_right">Agent</label>
+                                                <div class="span4 no-search">
+                                                    @Html.DropDownListFor(model => model.AgentID, (SelectList)ViewBag.Agents)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane no_padding" id="tab14">
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Display Name:</label>
+                                                <div class="field">
+                                                    <span id="spDisplayName" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">First Name:</label>
+                                                <div class="field">
+                                                    <span id="spFirstname" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Last Name:</label>
+                                                <div class="field">
+                                                    <span id="spLastName" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Email Address:</label>
+                                                <div class="field">
+                                                    <span id="spUsername" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">Mobile:</label>
+                                                <div class="field">
+                                                    <span id="spMobile" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form_row">
+                                                <label class="field_name align_right">City:</label>
+                                                <div class="field">
+                                                    <span id="spCity" class="field_value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form_row wizard_buttons">
+                                            <div class="field">
+                                                <a href="@Url.Content("~/User/UserList")" class="btn">Cancel</a>
+                                                <span class="btn red previous-button">Previous</span>
+                                                <span id="nextClick" class="btn light_blue next-button">Next</span>
+                                                <input type="submit" class="btn dark_green submit-button" value="Save" />
+                                                @* <span class="btn dark_green submit-button">Submit</span>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+
+    @Scripts.Render("~/Scripts/library/jquery.bootstrap.wizard.js")
+    @Scripts.Render("~/Scripts/library/jquery.validate.js")
+    @Scripts.Render("~/Scripts/flatpoint_core.js")
+    @Scripts.Render("~/Scripts/forms_layout.js")
+    @Scripts.Render("~/Scripts/forms_wizard.js")
+
+
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            ChangeType();
+
+            jQuery("#nextClick").click(function () {
+
+                jQuery("#spDisplayName").text(jQuery("#DisplayName").val());
+                jQuery("#spFirstname").text(jQuery("#Firstname").val());
+                jQuery("#spLastName").text(jQuery("#LastName").val());
+                jQuery("#spMobile").text(jQuery("#Mobile").val());
+                jQuery("#spCity").text(jQuery("#City").val());
+                jQuery("#spUsername").text(jQuery("#Username").val());
+            });
+
+            jQuery("#DealerID").change(function () {
+                var dID = jQuery(this).val();
+                LoadAgent(dID);
+
+            });
+
+            jQuery("#BankID").change(function () {
+                var dID = jQuery(this).val();
+               
+                LoadDealer(dID);
+            });
+
+        });
+
+        function LoadAgent(dID) {
+            jQuery.getJSON("../Agent/LoadAgentByDealer", { Id: dID },
+                    function (data) {
+                        var AgentSelect = jQuery("#AgentID");
+                        AgentSelect.empty();
+                        AgentSelect.append(jQuery('<option>', {
+                            value: 0,
+                            text: "select an Agent"
+                        }));
+                        jQuery.each(data, function (index, itemData) {
+                            AgentSelect.append(jQuery('<option>', {
+                                value: itemData.Id,
+                                text: itemData.AgenName
+                            }));
+                        });
+
+                    });
+        }
+        function LoadDealer(dID) {
+            jQuery("#DealerID").show();
+            //jQuery.getJSON("../Dealers/GetDealerByBank", { Id: dID },
+            //       function (data)
+            //       {
+                       
+            //           var DealerSelect = jQuery("#DealerID");
+                    
+            //           DealerSelect.append(jQuery('<option>', {
+            //               value: 0,
+            //               text: "SELECT A DEALER"
+            //           }));
+            //           //if (jQuery.trim(data) != "") {
+            //           //    jQuery("#DealerID").empty();
+            //           //    var jsonData = JSON.parse(data);
+            //           //    for (var i = 0; i < jsonData.length; i++)
+            //           //    {
+            //           //        $("#DealerID").append("<option " + "value='" + jsonData[i].Id + "'>" + jsonData[i].DealerName + "</option>");
+            //           //    }
+                          
+            //           //}
+            //           jQuery.each(data, function (index, itemData) {
+            //               DealerSelect.append(jQuery('<option>', {
+            //                   value: itemData.Id,
+            //                   text: itemData.DealerName
+            //               }));
+            //           });
+
+            //       });
+        }
+        function ChangeType() {
+
+            try {
+                var userType = jQuery("#UserTypeID").val();
+
+                if (userType == "-1" || userType == "4") {
+                    jQuery("#DealersDIV").hide();
+                    jQuery("#TerminalConfigDIV").hide();
+
+                    jQuery("#BankDiv").hide();
+                    jQuery("#AgentDIV").hide();
+                }
+                else if (userType == "1") {
+                    jQuery("#DealersDIV").hide();
+                    jQuery("#TerminalConfigDIV").hide();
+                    jQuery("#AgentDIV").hide();
+                    jQuery("#BankDiv").show();
+                }
+                else if (userType == "2") {
+                    
+                    jQuery("#DealersDIV").show();
+                    jQuery("#TerminalConfigDIV").show();
+                    jQuery("#AgentDIV").hide();
+                    jQuery("#BankDiv").show();
+                    var items = jQuery("#DealerID option").length;
+
+                    if (items == 1) {
+                        var skillsSelect = document.getElementById("DealerID");
+                        var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
+
+                        if (selectedText == "SELECT A DEALER") {
+                            var Id = jQuery("#BankID").val();
+                            LoadDealer(Id);
+                        }
+                       
+                    }
+                }
+                else if (userType == "3") {
+                    jQuery("#DealersDIV").show();
+                    jQuery("#AgentDIV").show();
+                    jQuery("#BankDiv").show();
+                }
+
+
+
+            }
+            catch (e) {
+                alert(e.message);
+            }
+
+
+            return false;
+        }
+
+        function populateText(frmElement, spName) {
+            jQuery(spName).text(frmElement.value);
+        }
+
+    </script>
+}
