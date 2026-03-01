@@ -14,6 +14,7 @@ namespace WalletReport.Processor
         public static Models.Summary GetTotalTransaction(DateTime startDate, DateTime endDate,Models.User OUser)
         {
 
+            IDictionary<String, Object> dbParameters = new Dictionary<string, object>();
             Models.Summary summary = new Models.Summary();
 
             IDbConnection conn = null;
@@ -21,8 +22,8 @@ namespace WalletReport.Processor
             StringBuilder builder = new StringBuilder();
             try
             {
-                builder.Append("Select SUM(CASE WHEN a.trans_type='CR' THEN a.trans_amt ELSE 0 END) AS 'TCR',SUM(Case WHEN a.trans_type='DR' THEN a.trans_amt ELSE 0 END) AS 'TDR',Count(*) as 'Icount' ");
-                builder.Append(" from tbl_setup_trans_history as a left join tbl_setup_dealers as b on a.acctnumber = b.acctnumber");
+                builder.Append("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;Select SUM(CASE WHEN a.trans_type='CR' THEN a.trans_amt ELSE 0 END) AS 'TCR',SUM(Case WHEN a.trans_type='DR' THEN a.trans_amt ELSE 0 END) AS 'TDR',Count(*) as 'Icount' ");
+                builder.Append(" from tbl_setup_trans_history as a");
                 builder.Append(" where a.date_created between @startDate and @endDate");
 
                 if (!(OUser.IsSuperUserOrAdmin || OUser.IsEtop))
@@ -30,14 +31,37 @@ namespace WalletReport.Processor
                     if (OUser.isBank)
                     {
                         builder.Append(" and a.bank_id=@bank_id");
+                        dbParameters.Add("@bank_id", OUser.BankID);
                     }
                     else if (OUser.IsDealer)
                     {
-                        builder.Append(" and b.Id=@Id");
+                        Dealers dealer = DealersProcessor.GetDealersByID(OUser.DealerID);
+                        List<String> dealerAccountInfo = new List<String>();
+                        if (!String.IsNullOrWhiteSpace(dealer.AccountNumber))
+                        {
+                            dealerAccountInfo.Add(dealer.AccountNumber);
+                        }
+                        if (!String.IsNullOrWhiteSpace(dealer.SettleAccountNumber))
+                        {
+                            dealerAccountInfo.Add(dealer.SettleAccountNumber);
+                        }
+                        if (dealerAccountInfo.Count > 0)
+                        {
+                            String accountNumber = String.Join(",", dealerAccountInfo.Select(c => string.Format("'{0}'", c)).ToArray());
+
+                            // builder.Append(String.Format(" and (b.Id =@dealer_id or a.acctnumber in(0))", accountNumber));
+                            builder.Append(String.Format(" AND ( EXISTS(select 1 from tbl_setup_agent as g where g.dealer_id=@dealer_id AND  g.Id = a.agent_id ) OR (a.acctnumber in({0})))", accountNumber));
+                        }
+                        else
+                        {
+                            builder.Append(" AND EXISTS(select 1 from tbl_setup_agent as g where g.dealer_id=@dealer_id AND  g.Id = a.agent_id )");
+                        }
+                        dbParameters.Add("@dealer_id", OUser.DealerID);
                     }
-                    else
+                    else if(OUser.IsAgent)
                     {
                         builder.Append(" and a.agent_id = @agent_id");
+                        dbParameters.Add("@agent_id", OUser.AgentID);
                     }
                 }
 
@@ -50,21 +74,9 @@ namespace WalletReport.Processor
                 command.AddParamWithValue(DbType.DateTime, "@startDate", startDate);
                 command.AddParamWithValue(DbType.DateTime, "@endDate", endDate);
 
-                if (!(OUser.IsSuperUserOrAdmin || OUser.IsEtop))
+                foreach (var param in dbParameters)
                 {
-                    if (OUser.isBank)
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@bank_id", OUser.BankID);
-                    }
-                    else if (OUser.IsDealer)
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@Id", OUser.DealerID);
-                    }
-                    else
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@agent_id", OUser.AgentID);
-                    }
-
+                    command.Parameters.Add(new MySql.Data.MySqlClient.MySqlParameter(param.Key,param.Value));
                 }
                 IDataReader rs = command.ExecuteReader(CommandBehavior.CloseConnection);
                 while (rs.Read())
@@ -200,71 +212,75 @@ namespace WalletReport.Processor
             return totalCredit;
         }
 
+
+
         public static List<Models.WalletTransaction> GetTransactionHistory(Models.User Ouser)
         {
 
-            List<Models.WalletTransaction> Transactions = null;
-            System.Text.StringBuilder builder = new StringBuilder();
-            builder.Append("select a.*,b.dealer_name,c.agent_name from tbl_setup_trans_history a left join tbl_setup_dealers as b on a.acctnumber = b.acctnumber left join tbl_setup_agent as c on a.agent_id = c.Id");
-            if (!(Ouser.IsSuperUserOrAdmin || Ouser.IsEtop))
-            {
-                if (Ouser.isBank)
-                {
-                    builder.Append(" where a.bank_id=@bank_id");
-                }
-                else if (Ouser.IsDealer)
-                {
-                    builder.Append(" where b.Id=@Id");
-                }
-                else
-                {
-                    builder.Append(" where c.Id=@Id");
-                }
+            return TransactionQueryProcessor.GetWalletTransactionForDashboard(Ouser, DateTime.Now.AddDays(-15), DateTime.Now.AddDays(1));
 
-            }
-            builder.Append(" order by date_created desc limit 0,15");
-            IDbConnection conn = null;
+            //List<Models.WalletTransaction> Transactions = null;
+            //System.Text.StringBuilder builder = new StringBuilder();
+            //builder.Append("select a.*,b.dealer_name,c.agent_name from tbl_setup_trans_history a left join tbl_setup_dealers as b on a.acctnumber = b.acctnumber left join tbl_setup_agent as c on a.agent_id = c.Id");
+            //if (!(Ouser.IsSuperUserOrAdmin || Ouser.IsEtop))
+            //{
+            //    if (Ouser.isBank)
+            //    {
+            //        builder.Append(" where a.bank_id=@bank_id");
+            //    }
+            //    else if (Ouser.IsDealer)
+            //    {
+            //        builder.Append(" where b.Id=@Id");
+            //    }
+            //    else
+            //    {
+            //        builder.Append(" where c.Id=@Id");
+            //    }
 
-            try
-            {
-                conn = ConnectionManager.GetConnection();
-                conn.OpenIfClosed();
+            //}
+            //builder.Append(" order by date_created desc limit 0,15");
+            //IDbConnection conn = null;
 
-                IDbCommand command = conn.CreateCommand();
-                command.CommandTimeout = 90;
-                command.CommandText = builder.ToString();
-                if (!(Ouser.IsSuperUserOrAdmin || Ouser.IsEtop))
-                {
-                    if (Ouser.isBank)
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@bank_id", Ouser.BankID);
-                    }
-                    else if (Ouser.IsDealer)
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@Id", Ouser.DealerID);
-                    }
-                    else
-                    {
-                        command.AddParamWithValue(DbType.Int64, "@Id", Ouser.AgentID);
-                    }
+            //try
+            //{
+            //    conn = ConnectionManager.GetConnection();
+            //    conn.OpenIfClosed();
 
-                }
-                IDataReader rs = command.ExecuteReader(CommandBehavior.CloseConnection);
+            //    IDbCommand command = conn.CreateCommand();
+            //    command.CommandTimeout = 90;
+            //    command.CommandText = builder.ToString();
+            //    if (!(Ouser.IsSuperUserOrAdmin || Ouser.IsEtop))
+            //    {
+            //        if (Ouser.isBank)
+            //        {
+            //            command.AddParamWithValue(DbType.Int64, "@bank_id", Ouser.BankID);
+            //        }
+            //        else if (Ouser.IsDealer)
+            //        {
+            //            command.AddParamWithValue(DbType.Int64, "@Id", Ouser.DealerID);
+            //        }
+            //        else
+            //        {
+            //            command.AddParamWithValue(DbType.Int64, "@Id", Ouser.AgentID);
+            //        }
 
-                Transactions = WalletReport.Processor.TransactionQueryProcessor.GetWalletTransaction(rs);
-            }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                ConnectionManager.Close(conn);
-            }
-            if (Transactions == null)
-                Transactions = new List<Models.WalletTransaction>();
+            //    }
+            //    IDataReader rs = command.ExecuteReader(CommandBehavior.CloseConnection);
 
-            return Transactions;
-            
+            //    Transactions = WalletReport.Processor.TransactionQueryProcessor.GetWalletTransaction(rs);
+            //}
+            //catch (Exception ex)
+            //{
+            //}
+            //finally
+            //{
+            //    ConnectionManager.Close(conn);
+            //}
+            //if (Transactions == null)
+            //    Transactions = new List<Models.WalletTransaction>();
+
+            //return Transactions;
+
         }
     }
 }

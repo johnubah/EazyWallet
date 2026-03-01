@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\processor\\transactionqueryprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\processor\\transactionqueryprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|c:\\users\\admin\\documents\\projects\\visualstudio\\2015\\cgatewalletreport\\ikedcreport\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\processor\\indexprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\processor\\indexprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|c:\\users\\admin\\documents\\projects\\visualstudio\\2015\\cgatewalletreport\\ikedcreport\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\processor\\indexprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\processor\\indexprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|c:\\users\\admin\\documents\\projects\\visualstudio\\2015\\cgatewalletreport\\ikedcreport\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|solutionrelative:ikedcreport\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3622504-A4DD-41F6-A34A-0C2C8B016598}|IkedcReport\\WalletReport.csproj|C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\ikedcreport\\processor\\dealersprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Web.config",
               "RelativeDocumentMoniker": "IkedcReport\\Web.config",
@@ -59,28 +59,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "IkedcReport\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Controllers\\HomeController.cs",
               "RelativeToolTip": "IkedcReport\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwEoAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAAAAABAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T14:50:13.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "IndexProcessor.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Processor\\IndexProcessor.cs",
               "RelativeDocumentMoniker": "IkedcReport\\Processor\\IndexProcessor.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Processor\\IndexProcessor.cs",
               "RelativeToolTip": "IkedcReport\\Processor\\IndexProcessor.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAA0wG0AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAAM8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T14:49:39.557Z"
+              "WhenOpened": "2026-02-22T14:49:39.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TransactionQueryProcessor.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Processor\\TransactionQueryProcessor.cs",
               "RelativeDocumentMoniker": "IkedcReport\\Processor\\TransactionQueryProcessor.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Processor\\TransactionQueryProcessor.cs",
               "RelativeToolTip": "IkedcReport\\Processor\\TransactionQueryProcessor.cs",
-              "ViewState": "AgIAAPwHAAAAAAAAAAAiwAwIAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAYIAAAAAAAAAAAAAO8HAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T14:09:19.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ReportController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Projects\\VisualStudio\\2015\\CGateWalletReport\\IkedcReport\\Controllers\\ReportController.cs",
               "RelativeDocumentMoniker": "IkedcReport\\Controllers\\ReportController.cs",

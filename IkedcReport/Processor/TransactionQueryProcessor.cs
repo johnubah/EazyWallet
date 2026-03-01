@@ -1921,6 +1921,105 @@ namespace WalletReport.Processor
             return transactions;
         }
 
+
+        public static List<WalletTransaction> GetWalletTransactionForDashboard(User oUser, DateTime startDate, DateTime endDate)
+        {
+
+            IDictionary<String, Object> dbParameters = new Dictionary<String, Object>();
+            List<WalletTransaction> transactions = null;
+            StringBuilder builder = new StringBuilder();
+
+            StringBuilder builderCount = new StringBuilder();
+
+            builder.Append("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;select a.* from tbl_setup_trans_history a");
+            builder.Append(" where a.date_created >=@startdate AND a.date_created <=@enddate");
+
+
+            if (oUser.IsAgent && oUser.AgentID > 0)
+            {
+                builder.Append(" and a.agent_id =@agent_id");
+                dbParameters.Add("@agent_id", oUser.AgentID);
+            }
+            else if (oUser.IsDealer && oUser.DealerID > 0)
+            {
+
+
+                Dealers dealer = DealersProcessor.GetDealersByID(oUser.DealerID);
+                List<String> dealerAccountInfo = new List<String>();
+                if (!String.IsNullOrWhiteSpace(dealer.AccountNumber))
+                {
+                    dealerAccountInfo.Add(dealer.AccountNumber);
+                }
+                if (!String.IsNullOrWhiteSpace(dealer.SettleAccountNumber))
+                {
+                    dealerAccountInfo.Add(dealer.SettleAccountNumber);
+                }
+                if (dealerAccountInfo.Count > 0)
+                {
+                    String accountNumber = String.Join(",", dealerAccountInfo.Select(c => string.Format("'{0}'", c)).ToArray());
+
+                    // builder.Append(String.Format(" and (b.Id =@dealer_id or a.acctnumber in(0))", accountNumber));
+                    builder.Append(String.Format(" AND ( EXISTS(select 1 from tbl_setup_agent as g where g.dealer_id=@dealer_id AND  g.Id = a.agent_id ) OR (a.acctnumber in({0})))", accountNumber));
+                }
+                else
+                {
+                    builder.Append(" AND EXISTS(select 1 from tbl_setup_agent as g where g.dealer_id=@dealer_id AND  g.Id = a.agent_id )");
+                }
+                dbParameters.Add("@dealer_id", oUser.DealerID);
+
+
+            }
+
+            builder.Append(" order by a.date_created desc limit 0,15");
+
+
+
+
+            IDbConnection conn = null;
+            try
+            {
+                conn = ConnectionManager.GetConnection();
+                conn.OpenIfClosed();
+
+                IDbCommand command = conn.CreateCommand();
+
+                command.CommandText = builder.ToString();
+
+
+
+
+
+                command.AddParamWithValue(DbType.DateTime, "@startdate", startDate);
+                command.AddParamWithValue(DbType.DateTime, "@enddate", endDate);
+
+
+
+
+                foreach (var parameter in dbParameters)
+                {
+                    command.Parameters.Add(new MySql.Data.MySqlClient.MySqlParameter(parameter.Key, parameter.Value));
+                }
+
+
+
+                IDataReader rs = command.ExecuteReader();
+                transactions = GetWalletTransactionV2(rs);
+
+                
+                rs.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                ConnectionManager.Close(conn);
+            }
+
+            return transactions;
+        }
+
         public static List<WalletTransaction> GetWalletTransactionPagingV2(User oUser, DateTime StartDate, DateTime EndDate, long BankID, long DealerID, long AgentID, SearchModel search)
         {
 
@@ -1930,7 +2029,7 @@ namespace WalletReport.Processor
 
             StringBuilder builderCount = new StringBuilder();
 
-            builder.Append("select a.* from tbl_setup_trans_history a");
+            builder.Append("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;select a.* from tbl_setup_trans_history a");
             builder.Append(" where a.date_created >=@startdate AND a.date_created <=@enddate");
 
 
@@ -1965,7 +2064,7 @@ namespace WalletReport.Processor
             if(AgentID > 0)
             {
                 builder.Append(" and a.agent_id =@agent_id");
-                dbParameters.Add("@dealer_id", AgentID);
+                dbParameters.Add("@agent_id", AgentID);
             }
 
             
